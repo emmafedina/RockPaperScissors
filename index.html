@@ -8,7 +8,31 @@
 </head>
 <body>
     <script>
-        console.log("Hello World");
+    
+        let choice;
+        let randomNum;
+        console.log(getRandomNum(3));
+    
+        console.log(getComputerChoice(choice))
+        
+        function getRandomNum(num){
+            randomNum = Math.floor(Math.random()*num);
+            console.log (randomNum+ " That is my random number");
+            if (randomNum == 1){
+                return choice = "Rock";
+            } else if (randomNum == 2){
+                return choice = "Paper";
+            }
+            else {
+                 return choice = "Scissors"
+            }
+
+        }
+        function getComputerChoice(choice){
+            return choice + " that is my choice"
+        }
+
+        
     </script>
 </body>
 </html>
