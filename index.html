@@ -11,9 +11,11 @@
     
         let choice;
         let randomNum;
+        let humanChoice;
+
         console.log(getRandomNum(3));
-    
-        console.log(getComputerChoice(choice))
+        console.log(getComputerChoice(choice));
+        console.log(getHumanChoice());
         
         function getRandomNum(num){
             randomNum = Math.floor(Math.random()*num);
@@ -32,6 +34,10 @@
             return choice + " that is my choice"
         }
 
+        function getHumanChoice (){
+            humanChoice = prompt("What is your human choice");
+            console.log(humanChoice + " That is the human choice");
+        }
         
     </script>
 </body>
