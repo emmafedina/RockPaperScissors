@@ -9,35 +9,86 @@
 <body>
     <script>
     
-        let choice;
+        let computerChoice;
         let randomNum;
         let humanChoice;
+        let humanScore = 0;
+        let computerScore = 0;
+
 
         console.log(getRandomNum(3));
-        console.log(getComputerChoice(choice));
-        console.log(getHumanChoice());
-        
+        console.log(getComputerChoice(computerChoice));
+        humanChoice = getHumanChoice(humanChoice);
+        console.log(playRound(humanChoice,computerChoice));
+
+
+        function playRound (humanChoice,computerChoice){
+       
+
+            if (humanChoice == "Rock" && computerChoice == "Scissors"){
+                console.log("Human picked Rock and Computer picked Scissors. Human won!")
+                humanScore += 1 
+                console.log(humanScore);
+            } 
+            if (humanChoice == "Scissors" && computerChoice == "Rock"){
+                computerScore +=1;
+                console.log("Human picked Scissors and Computer picked Rock. Computer won!. The computer score is: " + computerScore);
+
+            }
+
+            if (humanChoice == "Paper" && computerChoice == "Rock"){
+                humanScore +=1;
+                console.log("Human picked Paper and Computer picked Rock. Human won! Human score is: " + humanScore + "and computer score is: " + computerScore )
+
+            }
+            if (humanChoice == "Rock" && computerChoice == "Paper"){
+                computerScore +=1;
+                console.log("Human picked Rock and Computer picked Paper. Computer won! Computer score is: " + computerScore + "human score is: " + humanScore)
+
+            }
+
+            if (humanChoice == "Scissors" && computerChoice == "Paper"){
+                humanChoice +=1;
+                console.log("Human picked Scissors and Computer picked Paper. Human won! Human score is: " + humanScore + "Computer score is: " + computerScore );
+
+            }
+            if (humanChoice == "Paper" && computerChoice == "Scissors"){
+            
+                computerScore+=1;
+                console.log("Human picked Paper and Computer picked Scissors. Computer won! Computer score is: " + computerScore + "human score is: " + humanScore);
+
+            }
+        }
+    
+         
+                
+            
+       
         function getRandomNum(num){
             randomNum = Math.floor(Math.random()*num);
             console.log (randomNum+ " That is my random number");
             if (randomNum == 1){
-                return choice = "Rock";
+                return computerChoice= "Rock";
             } else if (randomNum == 2){
-                return choice = "Paper";
+                return computerChoice = "Paper";
             }
             else {
-                 return choice = "Scissors"
+                 return computerChoice = "Scissors"
             }
 
         }
-        function getComputerChoice(choice){
-            return choice + " that is my choice"
+        function getComputerChoice(computerChoice){
+            return computerChoice + " that is my choice"
         }
 
-        function getHumanChoice (){
+        function getHumanChoice (humanChoice){
             humanChoice = prompt("What is your human choice");
-            console.log(humanChoice + " That is the human choice");
+            humanChoice=humanChoice[0].toUpperCase() + humanChoice.substring(1);
+            console.log(humanChoice + " - that is the human choice");
+            return humanChoice;
         }
+
+
         
     </script>
 </body>
