@@ -16,19 +16,32 @@
         let computerScore = 0;
 
 
-        console.log(getRandomNum(3));
-        console.log(getComputerChoice(computerChoice));
-        humanChoice = getHumanChoice(humanChoice);
-        console.log(playRound(humanChoice,computerChoice));
+        choiceToEnd();
+        function choiceToEnd (){
+            startGame = prompt("Do you want to continue playing");
+            if (startGame == "yes"){
+                console.log(getRandomNum(3));
+                console.log(getComputerChoice(computerChoice));
+                humanChoice = getHumanChoice(humanChoice);
+                console.log(playRound(humanChoice,computerChoice));
+                choiceToEnd();
+            
+        } else if (startGame == "no"){
+            console.log("Thanks for playing. Bye!")
+        }
+        }
 
+        
+        
 
         function playRound (humanChoice,computerChoice){
        
 
             if (humanChoice == "Rock" && computerChoice == "Scissors"){
-                console.log("Human picked Rock and Computer picked Scissors. Human won!")
+
                 humanScore += 1 
-                console.log(humanScore);
+                console.log("Human picked Rock and Computer picked Scissors. Human won!. The human score is: " + humanScore);
+
             } 
             if (humanChoice == "Scissors" && computerChoice == "Rock"){
                 computerScore +=1;
@@ -64,8 +77,8 @@
                 
             
        
-        function getRandomNum(num){
-            randomNum = Math.floor(Math.random()*num);
+        function getRandomNum(){
+            randomNum = Math.floor(Math.random() * 3);
             console.log (randomNum+ " That is my random number");
             if (randomNum == 1){
                 return computerChoice= "Rock";
