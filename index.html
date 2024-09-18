@@ -5,104 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
-    <script>
+
+    <h1 id ='welcome'> Paper Rock Scissors</h1>
+    <div id="container">
+        <div id="computerContainer">
+            <!-- <h1>Computer's Choice: </h1> -->
+            <h1>Computer's Score: </h1>
+        </div>
+        
+        <div id="humanContainer"> 
+            <!-- <h1>Human's Choice: </h1> -->
+            <h1>Human's Score: </h1>
+        </div>
+   
+    </div>
+    <div id ="buttonContainer">
+        <button id="btn">End</button>
+        <button id ="rockBtn"></button>
+        <button id ="paperBtn"></button>
+        <button id ="scissorsBtn"></button>
+    </div>
+        <div id = "choiceContainer"> 
+            <h1 id = 'computerChoice'></h1>
+            <h1 id='humanChoice'></h1>
+        </div>
+
+
+
     
-        let computerChoice;
-        let randomNum;
-        let humanChoice;
-        let humanScore = 0;
-        let computerScore = 0;
-
-
-        choiceToEnd();
-        function choiceToEnd (){
-            startGame = prompt("Do you want to continue playing");
-            if (startGame == "yes"){
-                console.log(getRandomNum(3));
-                console.log(getComputerChoice(computerChoice));
-                humanChoice = getHumanChoice(humanChoice);
-                console.log(playRound(humanChoice,computerChoice));
-                choiceToEnd();
-            
-        } else if (startGame == "no"){
-            console.log("Thanks for playing. Bye!")
-        }
-        }
-
         
-        
-
-        function playRound (humanChoice,computerChoice){
-       
-
-            if (humanChoice == "Rock" && computerChoice == "Scissors"){
-
-                humanScore += 1 
-                console.log("Human picked Rock and Computer picked Scissors. Human won!. The human score is: " + humanScore);
-
-            } 
-            if (humanChoice == "Scissors" && computerChoice == "Rock"){
-                computerScore +=1;
-                console.log("Human picked Scissors and Computer picked Rock. Computer won!. The computer score is: " + computerScore);
-
-            }
-
-            if (humanChoice == "Paper" && computerChoice == "Rock"){
-                humanScore +=1;
-                console.log("Human picked Paper and Computer picked Rock. Human won! Human score is: " + humanScore + "and computer score is: " + computerScore )
-
-            }
-            if (humanChoice == "Rock" && computerChoice == "Paper"){
-                computerScore +=1;
-                console.log("Human picked Rock and Computer picked Paper. Computer won! Computer score is: " + computerScore + "human score is: " + humanScore)
-
-            }
-
-            if (humanChoice == "Scissors" && computerChoice == "Paper"){
-                humanChoice +=1;
-                console.log("Human picked Scissors and Computer picked Paper. Human won! Human score is: " + humanScore + "Computer score is: " + computerScore );
-
-            }
-            if (humanChoice == "Paper" && computerChoice == "Scissors"){
-            
-                computerScore+=1;
-                console.log("Human picked Paper and Computer picked Scissors. Computer won! Computer score is: " + computerScore + "human score is: " + humanScore);
-
-            }
-        }
-    
-         
-                
-            
-       
-        function getRandomNum(){
-            randomNum = Math.floor(Math.random() * 3);
-            console.log (randomNum+ " That is my random number");
-            if (randomNum == 1){
-                return computerChoice= "Rock";
-            } else if (randomNum == 2){
-                return computerChoice = "Paper";
-            }
-            else {
-                 return computerChoice = "Scissors"
-            }
-
-        }
-        function getComputerChoice(computerChoice){
-            return computerChoice + " that is my choice"
-        }
-
-        function getHumanChoice (humanChoice){
-            humanChoice = prompt("What is your human choice");
-            humanChoice=humanChoice[0].toUpperCase() + humanChoice.substring(1);
-            console.log(humanChoice + " - that is the human choice");
-            return humanChoice;
-        }
-
-
-        
-    </script>
 </body>
-</html>
+<script src ="file.js" defer></script>
+
+</html>  
